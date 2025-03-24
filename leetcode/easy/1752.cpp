@@ -23,7 +23,7 @@ class Solution {
         }
     };
 
-// Checking the drop if more than once, if yes not sorted or rotated. Memory efficient 
+// Checking the drop if more than once, if yes not sorted or rotated. Memory efficient O(n)
     class Solution {
         public:
             bool check(vector<int>& nums) {
