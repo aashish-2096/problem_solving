@@ -1,3 +1,5 @@
+import leetcode.pojo.ListNode;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
