@@ -1,16 +1,7 @@
 import leetcode.pojo.*;
-/**
- * Definition for singly-linked list.
- * class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
- * }
- */
-public class Solution {
+
+public class Cycle_Detection {
+    
     public ListNode detectCycle(ListNode head) {
         ListNode fast = head, slow = head;
         ListNode result = null;
