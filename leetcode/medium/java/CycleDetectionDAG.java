@@ -21,7 +21,6 @@ public class CycleDetectionDAG {
         visited[current] = true;
         recStack[current] = true;
         List<Integer> curr = adj.get(current);
-        int status = 0;
         for (int element : curr) {
             if(dfsTraversal(element, adj, visited, recStack)){
              return true;   

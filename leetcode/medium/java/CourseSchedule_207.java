@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseScehdule_207 {
+public class CourseSchedule_207 {
     class Solution {
     public ArrayList<ArrayList<Integer>> convertToAdjList(int[][] a, int V) {
         ArrayList<ArrayList<Integer>> adjListArray = new ArrayList<ArrayList<Integer>>(V);
