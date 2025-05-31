@@ -79,7 +79,6 @@ public class SurroundedRegions_130 {
                 }
             }
         }
-        ArrayList<Set<String>> path = new ArrayList<>();
         for (int i = 0; i < zeroes.size(); i++) {
             int x = zeroes.get(i).getKey();
             int y = zeroes.get(i).getValue();
