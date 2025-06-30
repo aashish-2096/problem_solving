@@ -1,7 +1,5 @@
 package leetcode.hard.java;
-
 import java.util.Arrays;
-
 public class PathInMatrixDivisbleByK_2435 {
     int m = -1;
     int n = -1;
