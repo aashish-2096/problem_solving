@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class AdjacentGroup_SubSequence_2900 {
-     List<Integer> maxList = new ArrayList<>();
+    List<Integer> maxList = new ArrayList<>();
     Map<Integer, List<Integer>> dpArray = new HashMap<>();
     public List<Integer> dp(int current, int[] groups, int index, List<Integer> currentArray) {
         int length = groups.length;

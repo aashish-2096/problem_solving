@@ -4,7 +4,7 @@ public class NumberOfWaysToReach_2400 {
     int MOD = 1000000007;
     int offset = 1000;
     int paths(int k, int currentPos, int steps, int[][] dp) {
-         if (Math.abs(currentPos) > dp[0].length / 2) return 0; 
+        if (Math.abs(currentPos) > dp[0].length / 2) return 0; 
         if (steps > k)
             return 0;
         if (steps == k) {
