@@ -8,7 +8,7 @@ public class TopoSort {
         for (int i = 0; i < V; i++) {
             adjListArray.add(new ArrayList<Integer>());
         }
-        int i, j;
+        int i;
         for (i = 0; i < a.length; i++) {
             adjListArray.get(a[i][0]).add(a[i][1]);
         }
@@ -29,7 +29,7 @@ public class TopoSort {
     
     public static ArrayList<Integer> topoSort(int V, int[][] edges) {
         List<Integer> path = new ArrayList<>();
-       if (V > 0) {
+        if (V > 0) {
             ArrayList<ArrayList<Integer>> adjList = convertToAdjList(edges, V);
             boolean[] visited = new boolean[V];
             Stack<Integer>callStack = new Stack<>();
@@ -43,7 +43,7 @@ public class TopoSort {
                 int val = callStack.pop();
                 path.add(val);
             }
-       }
+        }
     return new ArrayList<>(path);
     }
 }

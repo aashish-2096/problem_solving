@@ -1,4 +1,4 @@
-package leetcode.medium;
+
 public class HouseRobber_198 {
         public int recursion(int[] nums, int[] dp, int index, int takenIndex) {
             int size = nums.length;
