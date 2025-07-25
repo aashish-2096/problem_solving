@@ -1,5 +1,3 @@
-package leetcode.medium.java;
-
 import java.util.Arrays;
 
 public class HIndex_274 {
