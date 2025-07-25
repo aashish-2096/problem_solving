@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Stocks_WithCooldown {
+public class Stocks_WithCooldown_309 {
     public int compute(int[] prices, int index, int buy, int[][] dp) {
         if (index >= prices.length) {
             return 0;
