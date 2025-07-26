@@ -4,61 +4,59 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MinimumWindowSubstring_76 {
-    class Solution {
+
     public static Map<Character, Integer> getCharCountMap(String s) {
-        Map<Character, Integer> input = new HashMap<>();
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            if (!input.containsKey(ch)) {
-                input.put(ch, 0);
-            }
-            input.computeIfPresent(
-                ch, (k, v)->{
-                    v += 1;
-                    return v;
-                });
+        Map<Character, Integer> map = new HashMap<>();
+        for (char c : s.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
-        return input;
+        return map;
     }
 
-    public int minWindow(String s, String t) {
-        Map<Character, Integer> input = getCharCountMap(s);
-        Map<Character, Integer> target = getCharCountMap(t);
-        int left = 0;
-        int right = s.length();
-        int minLength = s.length();
-        boolean leftFreeze = false, rightFreeze = false;
-        while (left < right) {
-            if (!leftFreeze) {
-                char leftChar = s.charAt(left);
-                if (target.containsKey(leftChar)) {
-                    if (target.get(leftChar) == input.get(leftChar)) {
-                        leftFreeze = true;
-                    } else if (target.get(leftChar) < input.get(leftChar)) {
-                        left++;
-                    }
-                } else {
-                    left++;
-                }
-            } else if (!rightFreeze) {
-                char rightChar = s.charAt(right);
-                if (target.containsKey(rightChar)) {
-                    if (target.get(rightChar) == input.get(rightChar)) {
-                        rightFreeze = true;
-                    } else if (target.get(rightChar) < input.get(rightChar)) {
-                        right--;
-                    }
-                } else {
-                    right--;
-                }
-            }
-            if (leftFreeze && rightFreeze) {
-                minLength = Math.min(minLength, right - left + 1);
+    private boolean checkForTargetPresence(Map<Character, Integer> target, Map<Character, Integer> source) {
+        boolean allCharsPresent = true;
+        for (Map.Entry<Character, Integer> et : target.entrySet()) {
+            char key = et.getKey();
+            int value = et.getValue();
+            int valueSource = source.getOrDefault(key, -1);
+            if (valueSource == -1 || value > valueSource) {
+                allCharsPresent = false;
                 break;
             }
-            minLength = Math.min(minLength, right - left + 1);
         }
-        return minLength;
+        return allCharsPresent;
     }
-};
+
+    public String minWindow(String s, String t) {
+        if (t.length() > s.length()) {
+            return "";
+        }
+        Map<Character, Integer> target = getCharCountMap(t);
+        int left = 0, right = 0;
+        int leftMin = -1, rightMin = -1;
+        int minLength = Integer.MAX_VALUE;
+        Map<Character, Integer> inputBuild = new HashMap<>();
+        while (right < s.length()) {
+            char ch = s.charAt(right);
+            inputBuild.put(ch, inputBuild.getOrDefault(ch, 0) + 1);
+            while (checkForTargetPresence(target, inputBuild)) {
+                int length = right - left + 1;
+                if (length < minLength) {
+                    leftMin = left;
+                    rightMin = right;
+                    minLength = length;
+                }
+                char leftChar = s.charAt(left);
+                inputBuild.put(leftChar, inputBuild.getOrDefault(leftChar, 0) - 1);
+                if (inputBuild.get(leftChar) <= 0) {
+                    inputBuild.remove(leftChar);
+                }
+                left++;
+            }
+            right++;
+        }
+        if (leftMin == -1)
+            return "";
+        return s.substring(leftMin, rightMin + 1);
+    }
 }
