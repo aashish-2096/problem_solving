@@ -42,7 +42,7 @@ public class RottenOranges_994 {
                     int c = arr[1] + colF[j];
                     if (isValid(r, c, grid)) {
                         grid[r][c] = 2;
-                         queue.add(new int []{r, c});
+                        queue.add(new int []{r, c});
                         initiated = true;
                         fresh--;
                     }
