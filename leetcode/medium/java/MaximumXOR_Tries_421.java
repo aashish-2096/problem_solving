@@ -70,7 +70,7 @@ public class MaximumXOR_Tries_421 {
         for (int i = 0; i < nums.length; i++) {
             root.insert(nums[i]);
         }
-         for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             int num = root.searchMax(nums[i]);
             maxNum = Math.max(num, maxNum);
         }
