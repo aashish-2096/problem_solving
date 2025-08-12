@@ -3,7 +3,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class BitwiseOrSubArray_898 {
-    class Solution {
     Set<Integer> result = new HashSet<>();
 
     public int subarrayBitwiseORs(int[] arr) {
@@ -36,5 +35,4 @@ public class BitwiseOrSubArray_898 {
         }
         return hashSet.size();
     }
-}
 }
