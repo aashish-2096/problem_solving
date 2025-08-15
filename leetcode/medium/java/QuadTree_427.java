@@ -1,5 +1,3 @@
-package leetcode.medium.java;
-
 public class QuadTree_427 {
 class Node {
     public boolean val;
