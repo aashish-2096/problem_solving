@@ -1,5 +1,3 @@
-package leetcode.medium.java;
-
 public class IntegerToRoman_12 {
     public String getForOnes(int num) {
         StringBuilder st = new StringBuilder();

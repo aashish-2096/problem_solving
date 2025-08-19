@@ -1,5 +1,3 @@
-package leetcode.medium.java;
-
 public class GasStation_134 {
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int size = gas.length;

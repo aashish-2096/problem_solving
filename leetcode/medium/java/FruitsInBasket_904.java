@@ -1,5 +1,3 @@
-package leetcode.medium.java;
-
 import java.util.HashMap;
 import java.util.Map;
 
