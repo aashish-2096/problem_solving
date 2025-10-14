@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class Adj_IncSubArray_3349 {
     public boolean hasIncreasingSubarrays(List<Integer> nums, int k) {
-        boolean isIncreasing = true;
+        boolean isIncreasing = false;
         int len = nums.size();
         int constVal = -1001;
         int prev = constVal;
@@ -39,14 +39,7 @@ public class Adj_IncSubArray_3349 {
             }
             if (count > 0) {
                 isIncreasing = true;
-            } else {
-                isIncreasing = false;
             }
-        } else {
-            isIncreasing = false;
-        }
-        if (k == 1 && len > 1) {
-            isIncreasing = true;
         }
         return isIncreasing;
     }
