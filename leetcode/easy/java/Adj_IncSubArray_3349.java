@@ -3,6 +3,7 @@ package leetcode.easy.java;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.*;
 
 public class Adj_IncSubArray_3349 {
     public boolean hasIncreasingSubarrays(List<Integer> nums, int k) {
