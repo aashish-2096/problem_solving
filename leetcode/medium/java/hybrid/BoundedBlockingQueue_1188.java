@@ -6,7 +6,6 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class BoundedBlockingQueue_1188 {
-
     Deque<Integer> blockingQueue = new ArrayDeque<>();
     int size = -1;
     ReentrantLock lock = new ReentrantLock();
